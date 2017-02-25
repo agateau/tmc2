@@ -1,30 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Quotes</title>
-    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  </head>
-  <body>
-    <div class="container content">
-      <div class="page-header">
-        <h1>Quotes</h1>
-      </div>
-      <form action="." class="form" id="quote-form" method="post">
-        <textarea class="form-control" id="content" name="content"></textarea>
-        <button class="btn btn-primary" type="submit">
-          <span class="glyphicon glyphicon-plus"></span> Add Quote
-        </button>
-      </form>
-      <ul class="list-unstyled quotes">
-        {% for quote in quotes %}
-          {% include "quote.html" %}
-        {% endfor %}
-      </ul>
-      <div style="clear:both;"></div>
-    </div>
-  </body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+  <div class="page-header">
+    <h1>Quotes</h1>
+  </div>
+  <form action="." class="form" id="quote-form" method="post">
+    <textarea class="form-control" id="content" name="content"></textarea>
+    <button class="btn btn-primary" type="submit">
+      <span class="glyphicon glyphicon-plus"></span> Add Quote
+    </button>
+  </form>
+  <ul class="list-unstyled quotes">
+    {% for quote in quotes %}
+      {% include "quote.html" %}
+    {% endfor %}
+  </ul>
+{% endblock %}
