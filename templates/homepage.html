@@ -14,4 +14,10 @@
       {% include "quote.html" %}
     {% endfor %}
   </ul>
+
+  <ul class="pagination">
+    {% for p in range(page_count) %}
+      <li class="{{ 'active' if p == page }}"><a href="/?page={{ p }}">{{ p + 1 }}</a></li>
+    {% endfor %}
+  </ul>
 {% endblock %}
