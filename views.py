@@ -3,8 +3,6 @@ from flask import render_template, request, redirect, url_for
 from app import app
 from models import Quote
 
-PAGE_SIZE = 3
-
 
 @app.route('/', methods=['GET'])
 def homepage():
@@ -12,7 +10,7 @@ def homepage():
         page = int(request.args.get('page'))
     except TypeError:
         page = 0
-    quotes, page_count = Quote.paged(page, PAGE_SIZE)
+    quotes, page_count = Quote.paged(page, app.config['PAGE_SIZE'])
 
     return render_template('homepage.html', quotes=quotes, page=page,
                            page_count=page_count)
