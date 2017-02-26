@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 
 from app import app
 from models import Quote
@@ -22,4 +22,4 @@ def homepage():
 def add():
     if request.form.get('content'):
         Quote.create(content=request.form['content'])
-    return redirect('/')
+    return redirect(url_for('homepage'))
