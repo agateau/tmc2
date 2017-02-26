@@ -1,14 +1,7 @@
-import os
-
 from flask import Flask
 from peewee import SqliteDatabase
 
-
-APP_ROOT = os.path.dirname(os.path.realpath(__file__))
-DATABASE = os.path.join(APP_ROOT, 'tmc2.db')
-DEBUG = False
-
-
 app = Flask(__name__)
-app.config.from_object(__name__)
+app.config.from_object('config')
+app.config.from_envvar('TMC2_CONFIG')
 db = SqliteDatabase(app.config['DATABASE'], threadlocals=True)

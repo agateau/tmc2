@@ -11,6 +11,9 @@ RUN pip3 install -r /app/requirements.txt
 
 COPY . /app
 
+VOLUME /data
+ENV TMC2_CONFIG "/data/config.py"
+
 EXPOSE 5000
 
 ENTRYPOINT ["/app/main.py"]
