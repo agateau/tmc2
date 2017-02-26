@@ -15,7 +15,7 @@ class Quote(Model):
         database = db
 
     def html(self):
-        return Markup(self.content)
+        return Markup(self.content.replace('\n', '<br>'))
 
     @classmethod
     def paged(cls, page, page_size):
