@@ -6,4 +6,4 @@ import views  # noqa
 
 if __name__ == '__main__':
     Quote.create_table(True)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
