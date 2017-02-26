@@ -1,4 +1,4 @@
-DATABASE = '/path/to/the/dbfile'
+DATABASE = '/tmp/tmc2.db'
 DEBUG = False
 
 HOST = '127.0.0.1'
