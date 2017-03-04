@@ -9,7 +9,7 @@ from app import db
 
 class Quote(Model):
     content = TextField()
-    timestamp = DateTimeField(default=datetime.datetime.now)
+    date = DateTimeField(default=datetime.datetime.now)
 
     class Meta:
         database = db
@@ -19,6 +19,6 @@ class Quote(Model):
 
     @classmethod
     def paged(cls, page, page_size):
-        quotes = Quote.select().order_by(Quote.timestamp.desc())
+        quotes = Quote.select().order_by(Quote.date.desc())
         page_count = math.ceil(quotes.count() / page_size)
         return quotes.offset(page * page_size).limit(page_size), page_count

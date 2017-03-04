@@ -1,7 +1,7 @@
 <li class="quote col-12">
   <div class="panel panel-primary">
     <div class="panel-heading">
-      {{ quote.timestamp.strftime('%b %d, %Y %I:%M%p').lower() }}
+      {{ quote.date.strftime('%b %d, %Y %I:%M%p').lower() }}
     </div>
     <div class="panel-body">
       {{ quote.html() }}
