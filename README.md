@@ -4,10 +4,10 @@ Super minimalist quote gathering tool.
 
 Based on <http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-with-flask/>
 
-## quoteimport
+## quoteimport.py
 
-`quoteimport` lets you import quotes from a JSON file. The JSON file must have
-the following format:
+`quoteimport.py` lets you import quotes from a JSON file. The JSON file must
+have the following format:
 
     {
         "quotes": [
