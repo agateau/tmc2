@@ -5,6 +5,7 @@ import sys
 
 import arrow
 
+from app import db
 from models import Quote
 
 
@@ -13,11 +14,17 @@ Import quotes from a JSON file. See README.md for details of the format.
 """
 
 
-def do_import(quotes):
+def create_insert_list(quotes):
     for quote in quotes:
         date = arrow.get(quote['date']).datetime.strftime('%Y-%m-%d %H:%M:%S')
         text = quote['text']
-        Quote.create(date=date, content=text)
+        yield dict(date=date, content=text)
+
+
+def do_import(quotes):
+    lst = create_insert_list(quotes)
+    with db.atomic():
+        Quote.insert_many(lst).execute()
 
 
 def main():
