@@ -6,5 +6,10 @@ PORT = 5000
 
 PAGE_SIZE = 10
 
+LANGUAGES = {
+    'en': 'English',
+    'fr': 'French',
+}
+
 # To customize the configuration, create a local configuration file and point
 # the TMC2_CONFIG environment variable to it.

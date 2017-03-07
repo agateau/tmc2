@@ -12,3 +12,9 @@ run: venv
 
 shell:
 	. venv/bin/activate && exec $$SHELL
+
+compile_trans:
+	. venv/bin/activate && pybabel compile -d translations
+
+extract_trans:
+	. venv/bin/activate && pybabel extract -F babel.cfg -o messages.pot .

@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 
-from app import app
+from app import app, babel
 from models import Quote
 
 
@@ -21,3 +21,8 @@ def add():
     if request.form.get('content'):
         Quote.create(content=request.form['content'])
     return redirect(url_for('homepage'))
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'].keys())

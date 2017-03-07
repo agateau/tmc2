@@ -1,2 +1,5 @@
 flask
 peewee
+Flask-Babel
+# To avoid errors while gathering messages for translations
+setuptools==20.4
