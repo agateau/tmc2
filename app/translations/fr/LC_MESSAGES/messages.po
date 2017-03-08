@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-07 08:25+0100\n"
+"POT-Creation-Date: 2017-03-08 19:21+0100\n"
 "PO-Revision-Date: 2017-03-07 08:27+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: templates/homepage.html:4
+#: templates/base.html:7 templates/homepage.html:4
 msgid "Quotes"
 msgstr "Petits mots"
 
