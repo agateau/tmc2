@@ -8,13 +8,13 @@ venv:
 	. venv/bin/activate && pip install -r requirements.txt
 
 run: venv
-	. venv/bin/activate && ./main.py
+	. venv/bin/activate && app/main.py
 
 shell:
-	. venv/bin/activate && exec $$SHELL
+	. venv/bin/activate && cd app && exec $$SHELL
 
 compile_trans:
-	. venv/bin/activate && pybabel compile -d translations
+	. venv/bin/activate && cd app && pybabel compile -d translations
 
 extract_trans:
-	. venv/bin/activate && pybabel extract -F babel.cfg -o messages.pot .
+	. venv/bin/activate && cd app && pybabel extract -F babel.cfg -o translations/messages.pot .

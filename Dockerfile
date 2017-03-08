@@ -9,7 +9,7 @@ RUN \
 COPY requirements.txt /app/
 RUN pip3 install -r /app/requirements.txt
 
-COPY . /app
+COPY app /app
 
 VOLUME /data
 ENV TMC2_CONFIG "/data/config.py"
