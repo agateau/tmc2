@@ -16,5 +16,6 @@ shell:
 compile_trans:
 	. venv/bin/activate && cd app && pybabel compile -d translations
 
-extract_trans:
+update_trans:
 	. venv/bin/activate && cd app && pybabel extract -F babel.cfg -o translations/messages.pot .
+	. venv/bin/activate && cd app && pybabel update -d translations -i translations/messages.pot
