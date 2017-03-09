@@ -1,0 +1,9 @@
+<div class="panel panel-primary quote">
+  <div class="panel-heading">
+    {{ quote.date.strftime(config.DATE_FORMATS[config.LOCALE]) }}
+  </div>
+  <div class="panel-body">
+    {{ quote.html() }}
+    <a class="btn btn-xs permalink" href="{{ url_for('quote', quote_id=quote.id) }}" title="{{ _('Permalink') }}">¶</a>
+  </div>
+</div>

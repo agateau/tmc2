@@ -11,7 +11,9 @@
   </form>
   <ul class="list-unstyled quotes">
     {% for quote in quotes %}
-      {% include "quote.html" %}
+      <li class="col-12">
+        {% include "quote-snippet.html" %}
+      </li>
     {% endfor %}
   </ul>
 

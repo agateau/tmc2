@@ -5,3 +5,8 @@ textarea.quote-content {
 form.quote-form {
     padding-bottom: 1em;
 }
+
+a.permalink {
+    float: right;
+    color: silver;
+}

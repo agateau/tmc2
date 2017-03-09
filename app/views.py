@@ -23,6 +23,12 @@ def add():
     return redirect(url_for('homepage'))
 
 
+@app.route('/<int:quote_id>')
+def quote(quote_id):
+    quote = Quote.get(id=quote_id)
+    return render_template('quote.html', quote=quote)
+
+
 @babel.localeselector
 def get_locale():
     return app.config['LOCALE']
