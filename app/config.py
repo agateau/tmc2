@@ -6,9 +6,11 @@ PORT = 5000
 
 PAGE_SIZE = 10
 
-LANGUAGES = {
-    'en': 'English',
-    'fr': 'French',
+LOCALE = 'en_US'
+
+DATE_FORMATS = {
+    'en_US': '%B %d, %Y',
+    'fr_FR': '%d %B %Y',
 }
 
 # To customize the configuration, create a local configuration file and point

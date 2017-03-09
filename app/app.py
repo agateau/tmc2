@@ -1,3 +1,4 @@
+import locale
 import os
 
 from flask import Flask
@@ -10,5 +11,7 @@ babel = Babel(app)
 app.config.from_object('config')
 if 'TMC2_CONFIG' in os.environ:
     app.config.from_envvar('TMC2_CONFIG')
+
+locale.setlocale(locale.LC_ALL, app.config['LOCALE'])
 
 db = SqliteDatabase(app.config['DATABASE'], threadlocals=True)
