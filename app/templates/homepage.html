@@ -4,14 +4,18 @@
       <h1>{{ _('Quotes') }}</h1>
   </div>
   <form action="{{ url_for('add') }}" class="form quote-form" method="post">
-    <textarea class="form-control quote-content" id="content" name="content"></textarea>
-    <button class="btn btn-primary" type="submit">
+    <textarea class="form-control" id="content" name="content" rows="4"></textarea>
+    <button class="btn btn-primary quote-add-btn" type="submit">
       <span class="glyphicon glyphicon-plus"></span> {{ _('Add Quote') }}
     </button>
+    <div class="clearfix"></div>
   </form>
   <ul class="list-unstyled quotes">
     {% for quote in quotes %}
       <li class="col-12">
+        {% if not loop.first %}
+          <hr class="quote">
+        {% endif %}
         {% include "quote-snippet.html" %}
       </li>
     {% endfor %}

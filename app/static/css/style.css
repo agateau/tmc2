@@ -1,12 +1,47 @@
-textarea.quote-content {
-    height: 7em;
+p {
+    font-family: serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: serif;
 }
 
 form.quote-form {
-    padding-bottom: 1em;
+    padding-bottom: 20px;
 }
 
-a.permalink {
+.quote-add-btn {
     float: right;
-    color: silver;
+    margin: 20px 0;
+}
+
+/*- Quote ------------------------*/
+article.quote {
+}
+
+hr.quote {
+    width: 50%;
+    height: 1px;
+    border-bottom: 1px solid #eee;
+    margin: 80px auto;
+}
+
+h2 {
+    font-size: 150%;
+    color: #aaa;
+}
+
+h2 a.permalink {
+    color: #eee;
+}
+
+h2:hover a.permalink {
+    color: #428bca;
+}
+
+/*- Pagination -------------------*/
+.pagination .active a {
+    background-color: #eee;
+    border-color: #eee;
+    color: black;
 }
