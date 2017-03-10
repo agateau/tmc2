@@ -9,6 +9,7 @@
   <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
   <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  {% block head %}{% endblock %}
 </head>
 <body>
   <div class="container content">{% block content %}{% endblock %}
