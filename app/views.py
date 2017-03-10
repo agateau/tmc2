@@ -23,6 +23,19 @@ def add():
     return redirect(url_for('homepage'))
 
 
+@app.route('/edit', methods=['POST'])
+def edit():
+    quote_id = request.form['quote_id']
+    content = request.form['content']
+    next_ = request.form['next']
+
+    quote = Quote.get(id=quote_id)
+    quote.content = content
+    quote.save()
+
+    return redirect(next_)
+
+
 @app.route('/<int:quote_id>')
 def quote(quote_id):
     quote = Quote.get(id=quote_id)

@@ -1,4 +1,6 @@
+{% import "quote-editor.html" as quote_editor %}
 {% extends "base.html" %}
+
 {% block content %}
   <div class="page-header">
       <div class="add-quote-header-container">
@@ -7,27 +9,7 @@
       <h1>{{ _('Quotes') }}</h1>
   </div>
 
-  {# add-quote-modal #}
-  <div class="modal fade" id="add-quote-modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="{{ _('Close') }}"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">{{ _('Add a Quote') }}</h4>
-        </div>
-        <div class="modal-body">
-          <form action="{{ url_for('add') }}" class="form" method="post">
-            <textarea class="form-control" id="content" name="content" rows="4"></textarea>
-            <button class="btn btn-primary add-quote-btn" type="submit">
-              {{ _('Add Quote') }}
-            </button>
-            <div class="clearfix"></div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  {# /add-quote-modal #}
+  {{ quote_editor.quote_editor(modal_id='add-quote-modal') }}
 
   <ul class="list-unstyled quotes">
     {% for quote in quotes %}

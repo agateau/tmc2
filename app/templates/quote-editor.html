@@ -1,0 +1,27 @@
+{% macro quote_editor(modal_id, quote_id=None, quote_text=None, next=None) -%}
+  <div class="modal fade" id="{{ modal_id }}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="{{ _('Close') }}"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">{{ _('Edit a Quote') if quote_id else _('Add a Quote') }}</h4>
+        </div>
+        <div class="modal-body">
+          <form action="{{ url_for('edit' if quote_id else 'add') }}" class="form" method="post">
+            {% if quote_id %}
+              <input type="hidden" name="quote_id" value="{{ quote_id }}"/>
+            {% endif %}
+            {% if next %}
+              <input type="hidden" name="next" value="{{ next }}"/>
+            {% endif %}
+            <textarea class="form-control" id="content" name="content" rows="4">{{ quote_text }}</textarea>
+            <button class="btn btn-primary add-quote-btn" type="submit">
+              {{ _('Save') if quote_id else _('Add Quote') }}
+            </button>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{%- endmacro %}
