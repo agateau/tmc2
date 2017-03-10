@@ -2,7 +2,7 @@
   <h2>{{ quote.date.strftime(config.DATE_FORMATS[config.LOCALE]) }}
       <a class="permalink small" href="{{ url_for('quote', quote_id=quote.id) }}" title="{{ _('Permalink') }}">¶</a>
   </h2>
-  <p class="lead">
+  <p>
       {{ quote.html() }}
   </p>
 </article>
