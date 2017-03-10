@@ -6,13 +6,15 @@ h1, h2, h3, h4, h5, h6 {
     font-family: serif;
 }
 
-form.quote-form {
-    padding-bottom: 20px;
+/*- Title ------------------------*/
+.add-quote-header-container {
+    float: right;
 }
 
-.quote-add-btn {
+/*- Add quote --------------------*/
+.add-quote-btn {
     float: right;
-    margin: 20px 0;
+    margin-top: 10px;
 }
 
 /*- Quote ------------------------*/
