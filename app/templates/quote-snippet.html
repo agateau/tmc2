@@ -1,7 +1,11 @@
 <article class="quote" data-id="{{ quote.id }}">
   <h2>{{ quote.date.strftime(config.DATE_FORMATS[config.LOCALE]) }}
-    <a class="small edit-link" href="#edit-quote-modal-{{ quote.id }}" data-toggle="modal">{{ _('Edit') }}</a>
-    <a class="permalink small" href="{{ url_for('quote', quote_id=quote.id) }}" title="{{ _('Permalink') }}">¶</a>
+    <span class="toolbar">
+      <a href="#edit-quote-modal-{{ quote.id }}" data-toggle="modal" title="{{ _('Edit') }}">
+        <span class="glyphicon glyphicon-edit"></span></a>
+      <a href="{{ url_for('quote', quote_id=quote.id) }}" title="{{ _('Permalink') }}">
+        <span class="glyphicon glyphicon-link"></span></a>
+    </span>
   </h2>
   <p class="quote-text">
     {{ quote.html() }}

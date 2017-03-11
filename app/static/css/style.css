@@ -34,11 +34,17 @@ h2 {
     color: #aaa;
 }
 
-h2 a.permalink {
-    color: #eee;
+h2 .toolbar {
+    font-size: 80%;
 }
 
-h2:hover a.permalink {
+h2 .toolbar a {
+    color: #eee;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+h2:hover .toolbar a {
     color: #428bca;
 }
 
