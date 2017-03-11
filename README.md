@@ -21,7 +21,7 @@ have the following format:
 
 ## Static files sources
 
-<https://github.com/twbs/bootstrap/releases/download/v3.1.1/bootstrap-3.1.1-dist.zip>
+Bootstrap: <https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip>
 
 ## License
 
