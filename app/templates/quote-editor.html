@@ -14,7 +14,7 @@
             {% if next %}
               <input type="hidden" name="next" value="{{ next }}"/>
             {% endif %}
-            <textarea class="form-control" id="content" name="content" rows="4">{{ quote_text }}</textarea>
+            <textarea class="form-control" id="content" name="content" rows="4">{% if quote_text %}{{ quote_text }}{% endif %}</textarea>
             <button class="btn btn-primary add-quote-btn" type="submit">
               {{ _('Save') if quote_id else _('Add Quote') }}
             </button>
