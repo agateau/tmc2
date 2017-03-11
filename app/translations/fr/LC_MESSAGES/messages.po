@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-10 09:31+0100\n"
-"PO-Revision-Date: 2017-03-10 09:32+0100\n"
+"POT-Creation-Date: 2017-03-11 18:29+0100\n"
+"PO-Revision-Date: 2017-03-11 18:30+0100\n"
 "Last-Translator: Aurélien Gâteau\n"
 "Language: fr\n"
 "Language-Team: fr <mail@agateau.com>\n"
@@ -19,23 +19,35 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: templates/base.html:7 templates/homepage.html:10 templates/quote.html:5
+#: templates/base.html:7 templates/homepage.html:9 templates/quote.html:5
 msgid "Quotes"
 msgstr "Petits mots"
 
-#: templates/homepage.html:8 templates/homepage.html:25
+#: templates/homepage.html:7 templates/quote-editor.html:19
 msgid "Add Quote"
 msgstr "Ajouter"
 
-#: templates/homepage.html:18
+#: templates/quote-editor.html:6
 msgid "Close"
 msgstr "Fermer"
 
-#: templates/homepage.html:19
+#: templates/quote-editor.html:7
+msgid "Edit a Quote"
+msgstr "Modifier un petit mot"
+
+#: templates/quote-editor.html:7
 msgid "Add a Quote"
 msgstr "Ajouter un petit mot"
 
-#: templates/quote-snippet.html:3
+#: templates/quote-editor.html:19
+msgid "Save"
+msgstr "Enregistrer"
+
+#: templates/quote-snippet.html:4
+msgid "Edit"
+msgstr "Modifier"
+
+#: templates/quote-snippet.html:6
 msgid "Permalink"
 msgstr "Lien permanent"
 
