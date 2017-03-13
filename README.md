@@ -1,13 +1,44 @@
 # TMC2
 
-Super minimalist quote gathering tool.
+TMC2 is a minimalist quote gathering tool. It has been written to replace an
+hosted service, tropmignon.com, which has closed.
 
-Based on <http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-with-flask/>
+It lets you add and browse quotes (or any other short texts).
+
+It explicitly does not support:
+
+- markup
+- images
+- authentication
+- multiple authors
+- comments
+
+## Setup
+
+TMC2 depends on Python, Sqlite, Peewee, Flask, Jinja and Babel.
+
+You can get an instance up and running by running `make` in the root directory.
+This will create a virtualenv with the required dependencies, compile
+translations and run the app using Flask web server on <http://localhost:5000>.
+
+By default the database is in `/tmp/tmc2.db`. You should create a configuration
+file to define another location. You can then run TMC2 with this other
+configuration file by defining the `TMC2_CONFIG` environment variable.
+
+For example:
+
+    $ echo "DATABASE = /var/lib/tmc2.db" > /etc/tmc2.py
+    $ echo "HOST = '0.0.0.0'" >> /etc/tmc2.py
+    $ make TMC2_CONFIG=/etc/tmc2.py
+
+Look at <app/config.py> for other configuration options you can define.
+
+There is also a Dockerfile for the project.
 
 ## quoteimport.py
 
-`quoteimport.py` lets you import quotes from a JSON file. The JSON file must
-have the following format:
+The `quoteimport.py` tool in the `app` directory lets you import quotes from a
+JSON file. The JSON file must have the following format:
 
     {
         "quotes": [
@@ -19,9 +50,13 @@ have the following format:
         ]
     }
 
-## Static files sources
+(This format matches the JSON export format of tropmignon.com)
 
-Bootstrap: <https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip>
+## Bundled components
+
+TMC2 bundles the following components:
+- Bootstrap 3.3.7: <https://github.com/twbs/bootstrap/releases/download/v3.3.7/bootstrap-3.3.7-dist.zip>
+- jQuery 3.1.1: <https://code.jquery.com/jquery-3.1.1.min.js>
 
 ## License
 

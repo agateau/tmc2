@@ -1,3 +1,5 @@
+# An image for TMC2. Start it with a directory bound to /data. There must be a
+# `config.py` file in this directory for TMC2 configuration.
 FROM alpine
 MAINTAINER Aurélien Gâteau <mail@agateau.com>
 
