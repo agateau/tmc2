@@ -9,17 +9,16 @@ PORT = 5000
 # How many quotes per page
 PAGE_SIZE = 10
 
-# How should dates be formatted. The format is defined in the man page for
-# strftime.
+# How should dates be formatted. The format is defined in
+# http://arrow.readthedocs.io/en/latest/index.html#tokens
 DATE_FORMATS = {
-    'en_US': '%B %d, %Y',
-    'fr_FR': '%d %B %Y',
+    'en_US': 'MMMM D, YYYY',
+    'fr_FR': 'D MMMM YYYY',
 }
 
-# This must be set to a locale recognized by your Python installation. If you
-# define it to something other than one of the keys of `DATE_FORMATS`, define a
-# `DATE_FORMATS` entry for the locale you picked.
+# The locale to use. Must be one of the keys defined in DATE_FORMATS
 LOCALE = 'en_US'
 
 # To customize the configuration, create a local configuration file and point
-# the TMC2_CONFIG environment variable to it.
+# the TMC2_CONFIG environment variable to it. For example to use TMC2 in
+# French, define LOCALE to 'fr_FR'.

@@ -15,7 +15,7 @@ It explicitly does not support:
 
 ## Setup
 
-TMC2 depends on Python, Sqlite, Peewee, Flask, Jinja and Babel.
+TMC2 depends on Python, Sqlite, Peewee, Flask, Jinja, Arrow and Babel.
 
 You can get an instance up and running by running `make` in the root directory.
 This will create a virtualenv with the required dependencies, compile

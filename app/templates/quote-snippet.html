@@ -1,5 +1,5 @@
 <article class="quote" data-id="{{ quote.id }}">
-  <h2>{{ quote.date.strftime(config.DATE_FORMATS[config.LOCALE]) }}
+  <h2>{{ quote.date|format_date }}
     <span class="toolbar">
       <a href="#edit-quote-modal-{{ quote.id }}" data-toggle="modal" title="{{ _('Edit') }}">
         <span class="glyphicon glyphicon-edit"></span></a>

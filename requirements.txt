@@ -1,5 +1,7 @@
 flask
 peewee
 Flask-Babel
+arrow==0.10.0
+
 # To avoid errors while gathering messages for translations
 setuptools==20.4

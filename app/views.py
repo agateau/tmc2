@@ -1,7 +1,16 @@
+import arrow
+
 from flask import render_template, request, redirect, url_for
 
 from app import app, babel
 from models import Quote
+
+
+@app.template_filter()
+def format_date(dt):
+    locale = app.config['LOCALE']
+    fmt = app.config['DATE_FORMATS'][locale]
+    return arrow.get(dt).format(fmt, locale)
 
 
 @app.route('/', methods=['GET'])
