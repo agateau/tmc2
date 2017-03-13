@@ -1,4 +1,4 @@
-all: run
+all: venv compile_trans run
 
 clean:
 	-rm -rf venv
