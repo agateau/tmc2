@@ -17,9 +17,12 @@ It explicitly does not support:
 
 TMC2 depends on Python, Sqlite, Peewee, Flask, Jinja, Arrow and Babel.
 
-You can get an instance up and running by running `make` in the root directory.
-This will create a virtualenv with the required dependencies, compile
-translations and run the app using Flask web server on <http://localhost:5000>.
+To give it a try:
+
+1. Run `make` to create a virtualenv with the required dependencies and
+   compile translations
+2. Run `make run` to start the app using Flask web server on
+   <http://localhost:5000>
 
 By default the database is in `/tmp/tmc2.db`. You should create a configuration
 file to define another location. You can then run TMC2 with this other
@@ -29,7 +32,7 @@ For example:
 
     $ echo "DATABASE = /var/lib/tmc2.db" > /etc/tmc2.py
     $ echo "HOST = '0.0.0.0'" >> /etc/tmc2.py
-    $ make TMC2_CONFIG=/etc/tmc2.py
+    $ make run TMC2_CONFIG=/etc/tmc2.py
 
 Look at <app/config.py> for other configuration options you can define.
 
