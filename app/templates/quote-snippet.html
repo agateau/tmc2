@@ -1,3 +1,5 @@
+{% from "quote-editor.html" import quote_editor %}
+
 <article class="quote" data-id="{{ quote.id }}">
   <h2>{{ quote.date|format_date }}
     <span class="toolbar">
@@ -10,7 +12,7 @@
   <p class="quote-text">
     {{ quote.html() }}
   </p>
-  {{ quote_editor.quote_editor(modal_id='edit-quote-modal-{}'.format(quote.id),
-                               quote_id=quote.id, quote_text=quote.content,
-                               next=url_for('homepage', page=page)) }}
+  {{ quote_editor(modal_id='edit-quote-modal-{}'.format(quote.id),
+                  quote_id=quote.id, quote_text=quote.content,
+                  next=request.url) }}
 </article>
