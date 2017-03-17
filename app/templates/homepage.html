@@ -1,4 +1,4 @@
-{% import "quote-editor.html" as quote_editor %}
+{% from "quote-editor.html" import quote_editor %}
 {% extends "base.html" %}
 
 {% block content %}
@@ -9,7 +9,7 @@
       <h1>{{ _('Quotes') }}</h1>
   </div>
 
-  {{ quote_editor.quote_editor(modal_id='add-quote-modal') }}
+  {{ quote_editor(modal_id='add-quote-modal') }}
 
   <ul class="list-unstyled quotes">
     {% for quote in quotes %}
