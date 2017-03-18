@@ -1,4 +1,4 @@
-{% from "modal.html" import modal %}
+{% from "modal.html" import modal, cancel_button %}
 
 {# Create a modal to edit a quote #}
 {% macro quote_editor(modal_id, quote_id=None, quote_text=None, next=None) -%}
@@ -15,6 +15,7 @@
         <button class="btn btn-primary" type="submit">
           {{ _('Save') if quote_id else _('Add Quote') }}
         </button>
+        {{ cancel_button() }}
       </div>
       <div class="clearfix"></div>
     </form>
@@ -52,7 +53,7 @@
           <input type="hidden" name="next" value="{{ url_for('homepage') if is_permalink else request.url }}"/>
 
           <button class="btn btn-danger" type="submit">{{ _('Delete') }}</button>
-          <a href="#" class="btn btn-default" data-dismiss="modal">{{ _('Cancel') }}</a>
+          {{ cancel_button() }}
         </form>
       </div>
       <div class="clearfix"></div>

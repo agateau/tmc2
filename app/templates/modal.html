@@ -13,3 +13,7 @@
     </div>
   </div>
 {%- endmacro %}
+
+{% macro cancel_button() %}
+  <a href="#" class="btn btn-default" data-dismiss="modal">{{ _('Cancel') }}</a>
+{% endmacro %}
