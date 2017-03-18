@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2017-03-11 18:29+0100\n"
+"POT-Creation-Date: 2017-03-18 20:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,39 +17,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: templates/base.html:7 templates/homepage.html:9 templates/quote.html:5
+#: templates/base.html:7 templates/homepage.html:10 templates/quote.html:8
 msgid "Quotes"
 msgstr ""
 
-#: templates/homepage.html:7 templates/quote-editor.html:19
+#: templates/homepage.html:8 templates/quote-macros.html:16
 msgid "Add Quote"
 msgstr ""
 
-#: templates/quote-editor.html:6
+#: templates/modal.html:6
 msgid "Close"
 msgstr ""
 
-#: templates/quote-editor.html:7
+#: templates/modal.html:18
+msgid "Cancel"
+msgstr ""
+
+#: templates/quote-macros.html:5
 msgid "Edit a Quote"
 msgstr ""
 
-#: templates/quote-editor.html:7
+#: templates/quote-macros.html:5
 msgid "Add a Quote"
 msgstr ""
 
-#: templates/quote-editor.html:19
+#: templates/quote-macros.html:16
 msgid "Save"
 msgstr ""
 
-#: templates/quote-snippet.html:4
+#: templates/quote-macros.html:30
 msgid "Edit"
 msgstr ""
 
-#: templates/quote-snippet.html:6
+#: templates/quote-macros.html:32 templates/quote-macros.html:55
+msgid "Delete"
+msgstr ""
+
+#: templates/quote-macros.html:34
 msgid "Permalink"
 msgstr ""
 
-#: templates/quote.html:10
+#: templates/quote-macros.html:46
+msgid "Delete Quote"
+msgstr ""
+
+#: templates/quote-macros.html:47
+msgid "Are you sure you want to delete this quote?"
+msgstr ""
+
+#: templates/quote.html:13
 msgid "Back"
 msgstr ""
 
