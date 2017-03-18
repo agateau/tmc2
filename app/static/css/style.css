@@ -12,8 +12,8 @@ h1, h2, h3, h4, h5, h6 {
     float: right;
 }
 
-/*- Add quote --------------------*/
-.add-quote-btn {
+/*- Modals -----------------------*/
+.modal-btn-bar {
     float: right;
     margin-top: 10px;
 }

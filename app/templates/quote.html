@@ -1,10 +1,11 @@
+{% from "quote-snippet.html" import quote_view %}
 {% extends "base.html" %}
 {% block content %}
 
   <div class="page-header">
       <h1>{{ _('Quotes') }}</h1>
   </div>
-  {% include "quote-snippet.html" %}
+  {{ quote_view(quote=quote, is_permalink=True) }}
 
   <a class="btn btn-primary" href="{{ url_for('homepage') }}">
     ← {{ _('Back') }}

@@ -45,6 +45,16 @@ def edit():
     return redirect(next_)
 
 
+@app.route('/remove', methods=['POST'])
+def remove():
+    quote_id = request.form['quote_id']
+    next_ = request.form['next']
+
+    Quote.get(Quote.id == quote_id).delete_instance()
+
+    return redirect(next_)
+
+
 @app.route('/<int:quote_id>')
 def quote(quote_id):
     quote = Quote.get(id=quote_id)
