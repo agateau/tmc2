@@ -25,16 +25,26 @@
 {# Render a quote #}
 {% macro quote_view(quote, is_permalink=False) %}
   <article class="quote">
-    <h2>{{ quote.date|format_date }}
-      <span class="toolbar">
-        <a href="#edit-quote-modal-{{ quote.id }}" data-toggle="modal" title="{{ _('Edit') }}">
-          <span class="glyphicon glyphicon-edit"></span></a>
-        <a href="#delete-quote-modal-{{ quote.id }}" data-toggle="modal" title="{{ _('Delete') }}">
-          <span class="glyphicon glyphicon-trash"></span></a>
-        <a href="{{ url_for('quote', quote_id=quote.id) }}" title="{{ _('Permalink') }}">
-          <span class="glyphicon glyphicon-link"></span></a>
-      </span>
-    </h2>
+    <div class="dropdown quote-menu">
+      <a id="quote-dropdown-{{ quote.id }}" href="#" class="quote-menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="glyphicon glyphicon-chevron-down"></span></a>
+      <ul class="dropdown-menu" aria-labelledby="quote-dropdown-{{ quote.id }}">
+        <li>
+          <a href="{{ url_for('quote', quote_id=quote.id) }}" title="">
+            <span class="glyphicon glyphicon-link"></span> {{ _('Permalink') }}</a>
+        </li>
+        <li>
+          <a href="#edit-quote-modal-{{ quote.id }}" data-toggle="modal">
+            <span class="glyphicon glyphicon-edit"></span> {{ _('Edit') }}</a>
+        </li>
+        <li role="separator" class="divider"></li>
+        <li>
+          <a href="#delete-quote-modal-{{ quote.id }}" data-toggle="modal">
+            <span class="glyphicon glyphicon-trash"></span> {{ _('Delete') }}</a>
+        </li>
+      </ul>
+    </div>
+    <h2>{{ quote.date|format_date }}</h2>
     <p class="quote-text">
       {{ quote.html() }}
     </p>

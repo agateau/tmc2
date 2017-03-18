@@ -34,18 +34,18 @@ h2 {
     color: #aaa;
 }
 
-h2 .toolbar {
-    font-size: 80%;
+.quote-menu {
+    float: right;
 }
 
-h2 .toolbar a {
-    color: #eee;
+.quote-menu a.quote-menu-button {
+    color: #ccc;
     display: inline-block;
     padding: 0 5px;
 }
 
-h2:hover .toolbar a {
-    color: #428bca;
+.quote-menu:hover a.quote-menu-button {
+    color: #999;
 }
 
 /*- Pagination -------------------*/
