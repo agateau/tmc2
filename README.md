@@ -13,6 +13,16 @@ It explicitly does not support:
 - multiple authors
 - comments
 
+It looks like this:
+
+![Quote list](demo/demo1.png)
+
+![Adding a quote](demo/demo2.png)
+
+## Translations
+
+TMC2 is currently available in French and English.
+
 ## Setup
 
 TMC2 depends on Python, Sqlite, Peewee, Flask, Jinja, Arrow and Babel.
