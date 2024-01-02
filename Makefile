@@ -4,7 +4,7 @@ clean:
 	-rm -rf venv
 
 venv:
-	virtualenv --python python3 venv
+	python3 -m venv venv
 	. venv/bin/activate && pip install -r requirements.txt
 
 run: venv
@@ -14,6 +14,8 @@ shell:
 	. venv/bin/activate && cd app && exec $$SHELL
 
 compile_trans:
+	pwd
+	ls -l
 	. venv/bin/activate && cd app && pybabel compile -d translations
 
 update_trans:
