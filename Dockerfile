@@ -1,4 +1,4 @@
-# An image for TMC2, serving it using uwsgi on port 8000,
+# An image for TMC2, serving it using waitress on port 8000,
 # running as uid 33:33 (www-data on Debian).
 #
 # Mount a volume in it containing the configuration and database,
@@ -19,28 +19,27 @@
 # - Mount `tmc2-data` as `/data` in the container
 # - Set $TMC2_CONFIG to `/data/config.py`
 
-# This version of Debian is outdated, but that's the one known to work with the
+# This version of Python is outdated, but that's the one known to work with the
 # app dependencies right now. Need to refresh it.
-FROM debian:10
+FROM python:3.7-slim
 MAINTAINER Aurélien Gâteau <mail@agateau.com>
 
 RUN \
     apt-get update -y \
     && apt-get install \
         -y --no-install-recommends \
-        python3 \
-        python3-venv \
-        uwsgi \
-        uwsgi-plugin-python3 \
         make
 
 COPY requirements.txt Makefile /opt/
 RUN make -C /opt venv
+ENV PATH /opt/venv/bin:$PATH
+RUN python -m pip install waitress
 
 COPY app /opt/app
 COPY docker /opt/docker
 RUN make -C /opt compile_trans
 
 USER www-data
+WORKDIR /opt/app
 
-ENTRYPOINT ["uwsgi", "--ini", "/opt/docker/uwsgi.ini"]
+ENTRYPOINT ["waitress-serve", "--port", "8000", "main:app"]
