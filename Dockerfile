@@ -22,7 +22,7 @@
 # This version of Python is outdated, but that's the one known to work with the
 # app dependencies right now. Need to refresh it.
 FROM python:3.7-slim
-MAINTAINER Aurélien Gâteau <mail@agateau.com>
+LABEL org.opencontainers.image.authors="mail@agateau.com"
 
 RUN \
     apt-get update -y \
@@ -32,7 +32,7 @@ RUN \
 
 COPY requirements.txt Makefile /opt/
 RUN make -C /opt venv
-ENV PATH /opt/venv/bin:$PATH
+ENV PATH=/opt/venv/bin:$PATH
 RUN python -m pip install waitress
 
 COPY app /opt/app
