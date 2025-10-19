@@ -36,7 +36,6 @@ ENV PATH /opt/venv/bin:$PATH
 RUN python -m pip install waitress
 
 COPY app /opt/app
-COPY docker /opt/docker
 RUN make -C /opt compile_trans
 
 USER www-data
